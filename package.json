@@ -24,7 +24,7 @@
     "@middy/core": "^6.4.5",
     "@middy/http-json-body-parser": "^6.4.5",
     "@middy/validator": "^6.4.5",
-    "http-errors": "^2.0.0",
+    "bcryptjs": "^3.0.2",
     "jose": "^6.1.0",
     "uuid": "^13.0.0"
   },
@@ -32,7 +32,6 @@
     "@types/aws-lambda": "^8.10.152",
     "@types/http-errors": "^2.0.5",
     "@types/node": "^24.5.2",
-    "serverless-esbuild": "^1.55.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }

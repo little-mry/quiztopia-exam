@@ -7,7 +7,7 @@ provider:
   region: eu-north-1
   environment:
     QUIZ_TABLE: quiztopia-table
-  
+    JWT_SECRET: "supersecretkey"
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -38,67 +38,61 @@ provider:
       Resource:
         - "*"
 
-plugins:
-  - serverless-esbuild
-
-custom:
+build:
   esbuild:
     bundle: true
-    minify: false
+    minify: true
     sourcemap: true
-    target: node20
-    platform: node
-    format: esm
-    concurrency: 10
+    buildConcurrency: 10
 
 package:
   individually: true
 
 functions:
-  signUpUser:
-    handler: function/signUpUser/index.handler
+  signupUser:
+    handler: src/functions/auth/signupUser/index.handler
     events:
       - httpApi:
           path: /auth/signup
           method: post
   loginUser:
-    handler: function/loginUser/index.handler
+    handler: src/functions/loginUser/index.handler
     events:
       - httpApi:
           path: /auth/login
           method: post
   getAllQuizes:
-    handler: functions/getAllQuizes/index.handler
+    handler: src/functions/getAllQuizes/index.handler
     events:
       - httpApi:
           path: /quiz
           method: get
   postNewQuiz:
-    handler: functions/postNewQuiz/index.handler
+    handler: src/functions/postNewQuiz/index.handler
     events:
       - httpApi:
           path: /quiz
           method: post
   postNewQuestion:
-    handler: functions/postNewQuestion/index.handler
+    handler: src/functions/postNewQuestion/index.handler
     events:
       - httpApi:
           path: /quiz/question
           method: post
   getQuizById:
-    handler: functions/getQuizById/index.handler
+    handler: src/functions/getQuizById/index.handler
     events:
       - httpApi:
           path: /quiz/{userId}/{quizId}
           method: get
   deleteQuizById:
-    handler: functions/deleteQuizById/index.handler
+    handler: src/functions/deleteQuizById/index.handler
     events:
       - httpApi:
           path: /quiz/{userId}/{quizId}
           method: delete
   updateQuizById:
-    handler: functions/updateQuizById/index.handler
+    handler: src/functions/updateQuizById/index.handler
     events:
       - httpApi:
           path: /quiz/{userId}/{quizId}
