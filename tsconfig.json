@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": ".build",
+
+    "module": "esnext",
+    "target": "es2022",
+    
+    "strict": true,
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "types": ["node", "aws-lambda"],
+
+  },
+  "include": ["src/**/*.ts"]
+}

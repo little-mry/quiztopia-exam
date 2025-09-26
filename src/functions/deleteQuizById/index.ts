@@ -1,4 +1,4 @@
-exports.hello = async (event) => {
+const lamdbaHandler = async (event) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
@@ -6,3 +6,5 @@ exports.hello = async (event) => {
     }),
   };
 };
+
+export const handler = middy()

@@ -1,19 +1,123 @@
-# "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: javascript24
-# "service" is the name of this project. This will also be added to your AWS resource names.
 service: quiztopia-exam
 
 provider:
   name: aws
   runtime: nodejs20.x
-  # Uncomment to easily set up a custom domain. Read the docs for more details:
-  # https://www.serverless.com/framework/docs/providers/aws/guide/domains
-  # domain: api.example.com
+  region: eu-north-1
+  environment:
+    QUIZ_TABLE: quiztopia-table
+  
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:BatchGetItem
+        - dynamodb:Query
+        - dynamodb:DeleteItem
+        - dynamodb:TransactWriteItems
+        - dynamodb:UpdateItem
+        - dynamodb:DescribeTable
+      Resource:
+        - arn:aws:dynamodb:eu-north-1:*:table/quiztopia-table
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource:
+        - arn:aws:lambda:eu-north-1:*:function:quiztopia-exam-*
+    - Effect: Allow
+      Action:
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource:
+        - arn:aws:logs:eu-north-1:*:log-group:/aws/lambda/*:*
+    - Effect: Allow
+      Action:
+        - logs:CreateLogGroup
+      Resource:
+        - "*"
+
+plugins:
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    target: node20
+    platform: node
+    format: esm
+    concurrency: 10
+
+package:
+  individually: true
 
 functions:
-  hello:
-    handler: handler.hello
+  signUpUser:
+    handler: function/signUpUser/index.handler
     events:
       - httpApi:
-          path: /
+          path: /auth/signup
+          method: post
+  loginUser:
+    handler: function/loginUser/index.handler
+    events:
+      - httpApi:
+          path: /auth/login
+          method: post
+  getAllQuizes:
+    handler: functions/getAllQuizes/index.handler
+    events:
+      - httpApi:
+          path: /quiz
           method: get
+  postNewQuiz:
+    handler: functions/postNewQuiz/index.handler
+    events:
+      - httpApi:
+          path: /quiz
+          method: post
+  postNewQuestion:
+    handler: functions/postNewQuestion/index.handler
+    events:
+      - httpApi:
+          path: /quiz/question
+          method: post
+  getQuizById:
+    handler: functions/getQuizById/index.handler
+    events:
+      - httpApi:
+          path: /quiz/{userId}/{quizId}
+          method: get
+  deleteQuizById:
+    handler: functions/deleteQuizById/index.handler
+    events:
+      - httpApi:
+          path: /quiz/{userId}/{quizId}
+          method: delete
+  updateQuizById:
+    handler: functions/updateQuizById/index.handler
+    events:
+      - httpApi:
+          path: /quiz/{userId}/{quizId}
+          method: put
+
+resources:
+  Resources:
+    QuiztopiaTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: quiztopia-table
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+          - AttributeName: sk
+            AttributeType: S
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+          - AttributeName: sk
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST

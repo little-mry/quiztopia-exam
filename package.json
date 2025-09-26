@@ -1,0 +1,39 @@
+{
+  "name": "quiztopia-exam",
+  "version": "1.0.0",
+  "description": "Swagger: http://quiztopia-api-documentation.s3-website.eu-north-1.amazonaws.com/#/",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-mry/quiztopia-exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/little-mry/quiztopia-exam/issues"
+  },
+  "homepage": "https://github.com/little-mry/quiztopia-exam#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.896.0",
+    "@aws-sdk/util-dynamodb": "^3.896.0",
+    "@middy/core": "^6.4.5",
+    "@middy/http-json-body-parser": "^6.4.5",
+    "@middy/validator": "^6.4.5",
+    "http-errors": "^2.0.0",
+    "jose": "^6.1.0",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.152",
+    "@types/http-errors": "^2.0.5",
+    "@types/node": "^24.5.2",
+    "serverless-esbuild": "^1.55.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
