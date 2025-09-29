@@ -1,5 +1,5 @@
 import type { MiddlewareObj, Request } from "@middy/core";
-import { jwtVerify } from "jose";
+import { jwtVerify, type JWTPayload } from "jose";
 import { UnauthorizedError } from "../utils/httpErrors";
 import { sendResponse } from "../utils/sendResponse";
 
@@ -21,7 +21,18 @@ export const authorize = (): MiddlewareObj => {
         new TextEncoder().encode(JWT_SECRET)
       );
 
-      (request.event as any).user = payload;
+      const userId = (payload as any).userId as string | undefined;
+      const username = (payload as any).username as string | undefined;
+
+      if (!userId) {
+        throw new UnauthorizedError("Token payload missing userId");
+      }
+      
+      (request.event as any).auth = {
+        userId,
+        username,
+        raw: payload as JWTPayload,
+      };
     } catch {
       throw new UnauthorizedError("Invalid or expired token");
     }
@@ -38,6 +49,6 @@ export const authorize = (): MiddlewareObj => {
 
   return {
     before,
-    onError
-  }
+    onError,
+  };
 };

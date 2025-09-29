@@ -7,7 +7,7 @@ provider:
   region: eu-north-1
   environment:
     QUIZ_TABLE: quiztopia-table
-    JWT_SECRET: "supersecretkey"
+    JWT_SECRET: supersecretkey
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -56,7 +56,7 @@ functions:
           path: /auth/signup
           method: post
   loginUser:
-    handler: src/functions/loginUser/index.handler
+    handler: src/functions/auth/loginUser/index.handler
     events:
       - httpApi:
           path: /auth/login

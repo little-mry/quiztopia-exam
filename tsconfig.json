@@ -15,5 +15,5 @@
     "types": ["node", "aws-lambda"],
 
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src", "src/types"]
 }
