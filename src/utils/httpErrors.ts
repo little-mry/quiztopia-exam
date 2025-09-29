@@ -31,6 +31,11 @@ export class UnauthorizedError extends HttpError {
     super(401, message, true);
   }
 }
+export class NotFoundError extends HttpError {
+  constructor(message = "Not found") {
+    super(404, message, true);
+  }
+}
 
 export class InternalServerError extends HttpError {
   constructor(message = "Internal Server Error") {
