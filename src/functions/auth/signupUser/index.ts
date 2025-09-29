@@ -11,35 +11,37 @@ import bcrypt from "bcryptjs";
 import { TransactWriteItemsCommand } from "@aws-sdk/client-dynamodb";
 import { SignJWT } from "jose";
 
-import { newUserSchema } from "../../../schemas/newUserSchema";
 import { client } from "../../../services/db";
 import { sendResponse } from "../../../utils/sendResponse";
-
-//TYPES
-type NewUserBody = {
-  username: string;
-  email: string;
-  password: string;
-};
+import { errorHandler } from "../../../middlewares/errorHandler";
+import { ConflictError, InternalServerError } from "../../../utils/httpErrors";
+import { newUserSchema } from "../../../schemas/userSchemas";
+import type { NewUserBody } from "../../../types/userTypes";
 
 const TABLE = process.env.QUIZ_TABLE;
-const JWT_SECRET = process.env.JWT_SECRET! ?? "";
+const JWT_SECRET = process.env.JWT_SECRET!;
+if (!JWT_SECRET) throw new InternalServerError("Server misconfigured");
 
 const lamdbaHandler = async (
   event: APIGatewayProxyEventV2
 ): Promise<APIGatewayProxyStructuredResultV2> => {
   const body = event.body as unknown as NewUserBody;
 
+  //trim and make username and email to lowecase- to later compare to db (uniqeness)
   const usernameNorm = body.username.trim().toLowerCase();
   const emailNorm = body.email.trim().toLowerCase();
 
+  //create userId and "now"(for key createdAt)
   const userId = uuidv4();
   const now = new Date().toISOString();
 
+  //crypt password
   const salt = bcrypt.genSaltSync(10);
   const hash = bcrypt.hashSync(body.password, salt);
 
   try {
+    //try create user - 3 rows: USER#<userId> (actual user) + UNI#USERNAME#<username> + UNI#EMAIL#<email>
+    // check that pk, sk, email and username are unique
     await client.send(
       new TransactWriteItemsCommand({
         TransactItems: [
@@ -88,47 +90,36 @@ const lamdbaHandler = async (
   } catch (err: any) {
     if (err?.name === "TransactionCanceledException") {
       const reasons: Array<{ Code?: string }> = err.CancellationReasons ?? [];
-
       const usernameTaken = reasons[1]?.Code === "ConditionalCheckFailed";
       const emailTaken = reasons[2]?.Code === "ConditionalCheckFailed";
 
-      if (usernameTaken || emailTaken) {
-        return sendResponse(409, {
-          success: false,
-          error: "CONFLICT",
-          message: usernameTaken
-            ? "Username is already taken"
-            : "Email is already taken",
-        });
+      if (usernameTaken) {
+        throw new ConflictError("Username is already taken");
+      }
+      if (emailTaken) {
+        throw new ConflictError("Email is already taken");
       }
 
-      return sendResponse(409, {
-        success: false,
-        error: "TRANSACTION_CONFLICT",
-      });
+      throw new ConflictError("Transaction conflict");
     }
 
-    return sendResponse(500, {
-      success: false,
-      error: "INTERNAL_SERVER_ERROR",
-      message: err?.message ?? "Unknown error",
-    });
+    throw new InternalServerError();
   }
 
-  const secret = new TextEncoder().encode(JWT_SECRET);
+  // create token w jose
+  // LATER : put in cookie
   const token = await new SignJWT({
     username: usernameNorm,
-    email: emailNorm,
   })
     .setProtectedHeader({ alg: "HS256" })
     .setSubject(userId)
     .setIssuedAt()
     .setExpirationTime("3h")
-    .sign(secret);
+    .sign(new TextEncoder().encode(JWT_SECRET));
 
   return sendResponse(201, {
     success: true,
-    message: "User signup successfull",
+    message: "Signup successful",
     token,
     user: {
       userId: userId,
@@ -144,4 +135,5 @@ export const handler = middy<
   APIGatewayProxyStructuredResultV2
 >(lamdbaHandler)
   .use(jsonBodyParser())
-  .use(validator({ eventSchema: transpileSchema(newUserSchema) }));
+  .use(validator({ eventSchema: transpileSchema(newUserSchema) }))
+  .use(errorHandler());
