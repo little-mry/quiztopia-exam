@@ -73,6 +73,7 @@ const lamdbaHandler = async (
     // LATER : put in cookie
     const token = await new SignJWT({
       username: usernameNorm,
+      userId,
     })
       .setProtectedHeader({ alg: "HS256" })
       .setSubject(userId)

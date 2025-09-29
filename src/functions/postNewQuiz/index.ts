@@ -41,6 +41,8 @@ const lamdbaHandler = async (
           city: { S: quizCity },
           createdAt: { S: now },
           modifiedAt: { S: now },
+          GSI_ALL_pk: { S: "QUIZ" },
+          GSI_ALL_sk: { S: `CREATED#${now}#QUIZ#${quizId}` },
         },
         ConditionExpression:
           "attribute_not_exists(pk) AND attribute_not_exists(sk)",

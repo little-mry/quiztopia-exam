@@ -20,7 +20,8 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DescribeTable
       Resource:
-        - arn:aws:dynamodb:eu-north-1:*:table/quiztopia-table
+        - arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/quiztopia-table
+        - arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/quiztopia-table/index/*
     - Effect: Allow
       Action:
         - lambda:InvokeFunction
@@ -61,8 +62,8 @@ functions:
       - httpApi:
           path: /auth/login
           method: post
-  getAllQuizes:
-    handler: src/functions/getAllQuizes/index.handler
+  getAllQuizzes:
+    handler: src/functions/getAllQuizzes/index.handler
     events:
       - httpApi:
           path: /quiz
@@ -109,9 +110,37 @@ resources:
             AttributeType: S
           - AttributeName: sk
             AttributeType: S
+          # GSI for all quizzes
+          - AttributeName: GSI_ALL_pk
+            AttributeType: S
+          - AttributeName: GSI_ALL_sk
+            AttributeType: S
+          # GSI for leaderboard
+          - AttributeName: GSI_LEAD_pk
+            AttributeType: S
+          - AttributeName: GSI_LEAD_sk
+            AttributeType: S
         KeySchema:
           - AttributeName: pk
             KeyType: HASH
           - AttributeName: sk
             KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: GSI_ALL_QUIZZES
+            KeySchema:
+              - AttributeName: GSI_ALL_pk
+                KeyType: HASH
+              - AttributeName: GSI_ALL_sk
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL  # (kan snävas med KEYS_ONLY/INCLUDE om du vill)
+          - IndexName: GSI_LEADERBOARD
+            KeySchema:
+              - AttributeName: GSI_LEAD_pk
+                KeyType: HASH
+              - AttributeName: GSI_LEAD_sk
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL 
+           
         BillingMode: PAY_PER_REQUEST
