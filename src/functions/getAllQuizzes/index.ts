@@ -33,12 +33,24 @@ const lamdbaHandler = async (
     if (Items.length === 0) {
       throw new NotFoundError("No quizzes found");
     }
-    //gör responsen snyggare, ta pk, sk osv!
-    const quizzes = Items.map((item) => unmarshall(item));
+
+    const quizzes = Items.map((item) => {
+      const data = unmarshall(item);
+
+      return {
+        quizName: data.quizName,
+        quizId: data.quizId,
+        city: data.city,
+        createdAt: data.createdAt,
+        modifiedAt: data.modifiedAt,
+        ownerId: data.ownerId,
+      };
+    });
+
     return sendResponse(200, { success: true, quizzes });
   } catch (error) {
     console.error("getAllQuizzes error:", error);
-    throw new InternalServerError();
+    throw error;
   }
 };
 

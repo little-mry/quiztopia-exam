@@ -1,11 +1,21 @@
 import { GetItemCommand } from "@aws-sdk/client-dynamodb";
 import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
-import { client } from "../services/db";
+import { client } from "./db";
 import { UnauthorizedError, NotFoundError } from "../utils/httpErrors";
 
 const TABLE = process.env.QUIZ_TABLE!;
 
 export type KeyInput = Record<string, string | number>;
+type QuizMeta = { ownerId: string; quizId?: string };
+
+export const assertQuizOwnership = async (quizId: string, userId: string): Promise<QuizMeta> => {
+  const quiz = await fetchQuiz<QuizMeta>(
+    { pk: `QUIZ#${quizId}`, sk: "META" },
+    "ownerId"
+  );
+  assertOwner(quiz, userId);
+  return quiz;
+};
 
 //function to get item
 export const getItemByKey = async <T>(
@@ -23,7 +33,7 @@ export const getItemByKey = async <T>(
 };
 
 //helper to get quiz or throw notfound error
-export const fetchQuiz = async <T extends { quizId?: string }>(
+export const fetchQuiz = async <T = Record<string, unknown>>(
   key: KeyInput,
   projection?: string
 ): Promise<T> => {

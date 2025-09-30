@@ -11,3 +11,12 @@ export type HttpEventWithAuthAndBody<TBody> =
       raw?: JWTPayload;
     };
   };
+
+  export type HttpEventWithAuth = APIGatewayProxyEventV2 & {
+  auth: {
+    userId: string;
+    username?: string;
+    email?: string;
+    raw?: JWTPayload;
+  };
+};

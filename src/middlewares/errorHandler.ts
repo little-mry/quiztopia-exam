@@ -11,7 +11,7 @@ export const errorHandler = (): MiddlewareObj => ({
     console.error("Unhandled error: ", e);
 
     const status = e.statusCode || 500;
-    const message = e.expose ? e.message : "Ett oväntat fel inträffade";
+    const message = e.expose ? e.message : "An unexpected error occurred";
 
     request.response = {
       statusCode: status,

@@ -19,6 +19,7 @@ provider:
         - dynamodb:TransactWriteItems
         - dynamodb:UpdateItem
         - dynamodb:DescribeTable
+        - dynamodb:BatchWriteItem
       Resource:
         - arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/quiztopia-table
         - arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/quiztopia-table/index/*
@@ -78,26 +79,20 @@ functions:
     handler: src/functions/postNewQuestion/index.handler
     events:
       - httpApi:
-          path: /quiz/question
+          path: /quiz/{quizId}/question
           method: post
   getQuizById:
     handler: src/functions/getQuizById/index.handler
     events:
       - httpApi:
-          path: /quiz/{userId}/{quizId}
+          path: /quiz/{quizId}
           method: get
   deleteQuizById:
     handler: src/functions/deleteQuizById/index.handler
     events:
       - httpApi:
-          path: /quiz/{userId}/{quizId}
+          path: /quiz/{quizId}
           method: delete
-  updateQuizById:
-    handler: src/functions/updateQuizById/index.handler
-    events:
-      - httpApi:
-          path: /quiz/{userId}/{quizId}
-          method: put
 
 resources:
   Resources:
