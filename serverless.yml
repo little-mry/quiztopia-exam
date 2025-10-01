@@ -93,6 +93,18 @@ functions:
       - httpApi:
           path: /quiz/{quizId}
           method: delete
+  getQuizLeaderboard:
+    handler: src/functions/getQuizLeaderboard/index.handler
+    events:
+      - httpApi:
+          path: /quiz/{quizId}/leaderboard
+          method: get
+  postLeaderboardScore:
+    handler: src/functions/postLeaderboardScore/index.handler
+    events:
+      - httpApi:
+          path: /quiz/{quizId}/leaderboard
+          method: post
 
 resources:
   Resources:

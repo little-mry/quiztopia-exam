@@ -1,0 +1,183 @@
+{
+  "users": [
+    {
+      "username": "quizmaster1",
+      "email": "quiz1@example.com",
+      "password": "password123"
+    },
+    {
+      "username": "smartcookie",
+      "email": "smartcookie@example.com",
+      "password": "secret456"
+    },
+    {
+      "username": "geekgirl",
+      "email": "geekgirl@example.com",
+      "password": "mypass789"
+    },
+    {
+      "username": "triviafan",
+      "email": "triviafan@example.com",
+      "password": "guessme111"
+    },
+    {
+      "username": "maplover",
+      "email": "maplover@example.com",
+      "password": "coords222"
+    }
+  ],
+  "quizzes": [
+    {
+      "quizname": "Stockholm Trivia",
+      "city": "Stockholm"
+    },
+    {
+      "quizname": "Gothenburg Challenge",
+      "city": "Göteborg"
+    },
+    {
+      "quizname": "Malmö Fun Facts",
+      "city": "Malmö"
+    },
+    {
+      "quizname": "Uppsala History",
+      "city": "Uppsala"
+    },
+    {
+      "quizname": "Kiruna Winter Quiz",
+      "city": "Kiruna"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Vilket år grundades Stockholm?",
+      "answer": "1252",
+      "location": { "longitude": 18.0686, "latitude": 59.3293 }
+    },
+    {
+      "question": "Vad heter Stockholms största ö?",
+      "answer": "Södermalm",
+      "location": { "longitude": 18.055, "latitude": 59.315 }
+    },
+    {
+      "question": "Vilket museum rymmer skeppet Vasa?",
+      "answer": "Vasamuseet",
+      "location": { "longitude": 18.091, "latitude": 59.327 }
+    },
+    {
+      "question": "Vad heter den kända arenan i Solna?",
+      "answer": "Friends Arena",
+      "location": { "longitude": 18.000, "latitude": 59.370 }
+    },
+    {
+      "question": "Vilket djur finns i stadens vapen?",
+      "answer": "Sankt Erik",
+      "location": { "longitude": 18.070, "latitude": 59.330 }
+    },
+
+    {
+      "question": "Vilken gata är Göteborgs paradgata?",
+      "answer": "Avenyn",
+      "location": { "longitude": 11.9746, "latitude": 57.7089 }
+    },
+    {
+      "question": "Vilket år grundades Göteborg?",
+      "answer": "1621",
+      "location": { "longitude": 11.97, "latitude": 57.71 }
+    },
+    {
+      "question": "Vilket museum har en stor samling konst i Göteborg?",
+      "answer": "Göteborgs Konstmuseum",
+      "location": { "longitude": 11.97, "latitude": 57.70 }
+    },
+    {
+      "question": "Vad heter Göteborgs största nöjespark?",
+      "answer": "Liseberg",
+      "location": { "longitude": 11.993, "latitude": 57.696 }
+    },
+    {
+      "question": "Vad heter den stora hamnen i Göteborg?",
+      "answer": "Göteborgs hamn",
+      "location": { "longitude": 11.95, "latitude": 57.71 }
+    },
+
+    {
+      "question": "Vad heter Malmös kända skyskrapa?",
+      "answer": "Turning Torso",
+      "location": { "longitude": 12.976, "latitude": 55.613 }
+    },
+    {
+      "question": "Vilket år fick Malmö stadsrättigheter?",
+      "answer": "1353",
+      "location": { "longitude": 13.00, "latitude": 55.60 }
+    },
+    {
+      "question": "Vad heter Malmös centralstation?",
+      "answer": "Malmö Central",
+      "location": { "longitude": 13.001, "latitude": 55.609 }
+    },
+    {
+
+      "question": "Vilken bro förbinder Malmö med Danmark?",
+      "answer": "Öresundsbron",
+      "location": { "longitude": 12.77, "latitude": 55.57 }
+    },
+    {
+      "question": "Vad heter fotbollslaget från Malmö?",
+      "answer": "Malmö FF",
+      "location": { "longitude": 13.003, "latitude": 55.59 }
+    },
+
+    {
+      "question": "Vilket år grundades Uppsala universitet?",
+      "answer": "1477",
+      "location": { "longitude": 17.6389, "latitude": 59.8586 }
+    },
+    {
+      "question": "Vad heter Uppsala domkyrka?",
+      "answer": "Uppsala domkyrka",
+      "location": { "longitude": 17.633, "latitude": 59.858 }
+    },
+    {
+      "question": "Vilken flod rinner genom Uppsala?",
+      "answer": "Fyrisån",
+      "location": { "longitude": 17.64, "latitude": 59.86 }
+    },
+    {
+      "question": "Vilket känt slott finns i Uppsala?",
+      "answer": "Uppsala slott",
+      "location": { "longitude": 17.633, "latitude": 59.855 }
+    },
+    {
+      "question": "Vilken vetenskaplig figur studerade i Uppsala?",
+      "answer": "Carl von Linné",
+      "location": { "longitude": 17.62, "latitude": 59.85 }
+    },
+
+    {
+      "question": "Vad bryts i Kiruna?",
+      "answer": "Järnmalm",
+      "location": { "longitude": 20.225, "latitude": 67.855 }
+    },
+    {
+      "question": "Vad heter Kirunas kyrka?",
+      "answer": "Kiruna kyrka",
+      "location": { "longitude": 20.217, "latitude": 67.855 }
+    },
+    {
+      "question": "Vilket fenomen syns ofta i Kiruna vintertid?",
+      "answer": "Norrsken",
+      "location": { "longitude": 20.22, "latitude": 67.85 }
+    },
+    {
+      "question": "Vilket år flyttades Kirunas stadskärna?",
+      "answer": "2014",
+      "location": { "longitude": 20.22, "latitude": 67.85 }
+    },
+    {
+      "question": "Vad heter gruvan i Kiruna?",
+      "answer": "LKAB-gruvan",
+      "location": { "longitude": 20.23, "latitude": 67.85 }
+    }
+  ]
+}

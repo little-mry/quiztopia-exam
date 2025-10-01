@@ -40,7 +40,7 @@ export const newQuestionSchema = {
       type: "object",
       required: ["quizId"],
       properties: {
-        quizId: { type: "string", minLength: 1 },
+        quizId: { type: "string", format: "uuid" },
       },
       additionalProperties: false,
     },
@@ -55,7 +55,7 @@ export const getQuizSchema = {
       type: "object",
       required: ["quizId"],
       properties: {
-        quizId: { type: "string", minLength: 1 },
+        quizId: { type: "string", format: "uuid" },
       },
       additionalProperties: false,
     },
