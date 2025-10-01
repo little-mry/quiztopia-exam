@@ -1,15 +1,16 @@
 # Quiztopia
-## Maria Kjellholm
+### Maria Kjellholm
 
+#### Datamodell:
 ![Datamodell](./src/assets/Quiztopia-datamodell.png)
 
-## Kort info:
+### Kort info:
 - Jag har skrivit i typescript, för att utmana mig själv.
 - Det finns data för att logga in användare eller kolla på specifikt quiz i src/assets/dummyData.json
 
 
-## Kravspecifikation
-### Godkänt:
+### Kravspecifikation
+#### Godkänt:
 - ✅  Det går att skapa konto och logga in.
 - ✅ Det går att se alla quiz, vad quiz:et heter samt vem som skapat det.
 - ✅ Det går att välja ett specifikt quiz och få alla frågor.
@@ -20,11 +21,11 @@
 - ✅ Det går att ta bort ett quiz.
 - ✅ config-fil för Postman med exempelanrop
 
-### VG-krav
+#### VG-krav
 - ✅Leaderboard, två endpoint (lägga till poäng, se top scores för en quiz)
 - ✅ Du ska ha en policy i din serverless framework
 
-## Tekniska krav
+#### Tekniska krav
 ✅ Serverless framework
 ✅ Middy
 ✅ JSON Web Token (använder jose-paketet)
