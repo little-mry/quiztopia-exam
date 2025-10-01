@@ -140,7 +140,7 @@ resources:
               - AttributeName: GSI_ALL_sk
                 KeyType: RANGE
             Projection:
-              ProjectionType: ALL  # (kan snävas med KEYS_ONLY/INCLUDE om du vill)
+              ProjectionType: ALL  
           - IndexName: GSI_LEADERBOARD
             KeySchema:
               - AttributeName: GSI_LEAD_pk
