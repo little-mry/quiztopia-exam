@@ -8,8 +8,7 @@
 - Jag har skrivit i typescript, för att utmana mig själv.
 - Det finns data för att logga in användare eller kolla på specifikt quiz i src/assets/dummyData.json
 
-
-### Kravspecifikation
+### Detta är uppfyllt i projektet:
 #### Godkänt:
 - ✅  Det går att skapa konto och logga in.
 - ✅ Det går att se alla quiz, vad quiz:et heter samt vem som skapat det.
