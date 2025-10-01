@@ -1,0 +1,1125 @@
+{
+	"info": {
+		"_postman_id": "672af562-2c59-425c-91b9-82c088a30b13",
+		"name": "QUIZTOPIA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42119319"
+	},
+	"item": [
+		{
+			"name": "SIGNUP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"lillamry\",\r\n    \"email\": \"mry@lilla.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/auth/signup",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SIGNUP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"lillamry\",\r\n    \"email\": \"mry@lilla.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/auth/signup",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 16:51:04 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "508",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RrHWtiU2gi0EJTw=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Signup successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxpbGxhbXJ5IiwidXNlcklkIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwic3ViIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwiaWF0IjoxNzU5MTY0NjY0LCJleHAiOjE3NTkxNzU0NjR9.e-6XpBpJbJFo6vBKEImhdbwA15iQRqqLrDtQxsPwgQE\",\n    \"user\": {\n        \"userId\": \"760eede6-e775-4def-ac4f-415681de617c\",\n        \"username\": \"lillamry\",\n        \"email\": \"mry@lilla.com\",\n        \"createdAt\": \"2025-09-29T16:51:04.221Z\"\n    }\n}"
+				},
+				{
+					"name": "409",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"username\": \"geekgirl\",\r\n      \"email\": \"geekgirl@example.com\",\r\n      \"password\": \"mypass789\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/auth/signup",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:03:11 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "Rwf58iDlAi0EJIw=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"tr\",\n    \"message\": \"Username is already taken\"\n}"
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n      \"username\": \"quizmaster1\",\r\n      \"password\": \"password123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"lillamry\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 16:52:05 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "462",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RrHgOhDxgi0EPwQ=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxpbGxhbXJ5IiwidXNlcklkIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwic3ViIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwiaWF0IjoxNzU5MTY0NzI1LCJleHAiOjE3NTkxNzU1MjV9.0TDGJLfOOSMrWq3eW5Xx3rSbhQwRGnaUc11Ih2jXnaI\",\n    \"user\": {\n        \"userId\": \"760eede6-e775-4def-ac4f-415681de617c\",\n        \"username\": \"lillamry\",\n        \"email\": \"mry@lilla.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POST QUIZ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxpbGxhbXJ5IiwidXNlcklkIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwic3ViIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwiaWF0IjoxNzU5MTY0NzI1LCJleHAiOjE3NTkxNzU1MjV9.0TDGJLfOOSMrWq3eW5Xx3rSbhQwRGnaUc11Ih2jXnaI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quizname\": \"spökquizet\",\r\n    \"city\": \"flen\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST QUIZ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizname\": \"västerås runt\",\r\n    \"city\": \"västerås\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 16:54:18 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "285",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RrH1Ih_QAi0EQFQ=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Quiz created\",\n    \"quiz\": {\n        \"quizId\": \"d41eb927-5e44-4496-a34c-1aa14ce4c3d3\",\n        \"quizName\": \"västerås runt\",\n        \"quizCity\": \"västerås\",\n        \"ownerId\": \"760eede6-e775-4def-ac4f-415681de617c\",\n        \"createdAt\": \"2025-09-29T16:54:18.058Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET ALL QUIZZES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxpbGxhbXJ5IiwidXNlcklkIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwic3ViIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwiaWF0IjoxNzU5MTY0NzI1LCJleHAiOjE3NTkxNzU1MjV9.0TDGJLfOOSMrWq3eW5Xx3rSbhQwRGnaUc11Ih2jXnaI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET ALL QUIZZES",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:09:48 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1737",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "Rwg38i1Qgi0EPnA=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"quizzes\": [\n        {\n            \"quizName\": \"Kiruna Winter Quiz\",\n            \"quizId\": \"2586d6b1-0630-4596-94f2-c367b3747a4a\",\n            \"city\": \"Kiruna\",\n            \"createdAt\": \"2025-10-01T08:08:47.290Z\",\n            \"modifiedAt\": \"2025-10-01T08:08:47.290Z\",\n            \"ownerId\": \"a267580c-a6c4-436f-8b15-2000e353519a\"\n        },\n        {\n            \"quizName\": \"Uppsala History\",\n            \"quizId\": \"665e2493-c494-4042-b3d3-2ca21db829ad\",\n            \"city\": \"Uppsala\",\n            \"createdAt\": \"2025-10-01T08:08:37.548Z\",\n            \"modifiedAt\": \"2025-10-01T08:08:37.548Z\",\n            \"ownerId\": \"a267580c-a6c4-436f-8b15-2000e353519a\"\n        },\n        {\n            \"quizName\": \"Malmö Fun Facts\",\n            \"quizId\": \"efbea30c-c29d-4046-bd47-ada876937f36\",\n            \"city\": \"Malmö\",\n            \"createdAt\": \"2025-10-01T08:07:04.255Z\",\n            \"modifiedAt\": \"2025-10-01T08:07:04.255Z\",\n            \"ownerId\": \"6c32d5f1-adda-426e-918a-02f51e576298\"\n        },\n        {\n            \"quizName\": \"Gothenburg Challenge\",\n            \"quizId\": \"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5\",\n            \"city\": \"Göteborg\",\n            \"createdAt\": \"2025-10-01T08:06:53.676Z\",\n            \"modifiedAt\": \"2025-10-01T08:06:53.676Z\",\n            \"ownerId\": \"6c32d5f1-adda-426e-918a-02f51e576298\"\n        },\n        {\n            \"quizName\": \"Stockholm Trivia\",\n            \"quizId\": \"aad9ee29-ef11-4c98-9837-139c4ec51548\",\n            \"city\": \"Stockholm\",\n            \"createdAt\": \"2025-10-01T08:05:57.836Z\",\n            \"modifiedAt\": \"2025-10-01T08:05:57.836Z\",\n            \"ownerId\": \"66ff855b-6ef7-401c-8f1e-ff3d32859234\"\n        },\n        {\n            \"quizName\": \"spökquizet\",\n            \"quizId\": \"db682a5e-1d64-4e1f-8d27-fc49d0cab790\",\n            \"city\": \"flen\",\n            \"createdAt\": \"2025-10-01T08:05:52.429Z\",\n            \"modifiedAt\": \"2025-10-01T08:05:52.429Z\",\n            \"ownerId\": \"66ff855b-6ef7-401c-8f1e-ff3d32859234\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "POST QUESTION",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxpbGxhbXJ5IiwidXNlcklkIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwic3ViIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwiaWF0IjoxNzU5MjI4Mzk2LCJleHAiOjE3NTkyMzkxOTZ9.80sbBwP9G4bTHszYAgtlw4X3NmUJaqUmxchgK3R0kZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"När invigdes Västerås stadshotell?\",\r\n    \"answer\": \"1907\",\r\n    \"location\": {\r\n        \"longitude\": 14.54321,\r\n        \"latitude\": 57.12345\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/d41eb927-5e44-4496-a34c-1aa14ce4c3d3/question",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz",
+						"d41eb927-5e44-4496-a34c-1aa14ce4c3d3",
+						"question"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST QUESTION",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\": \"När invigdes Västerås stadshotell?\",\r\n    \"answer\": \"1907\",\r\n    \"location\": {\r\n        \"longitude\": 14.54321,\r\n        \"latitude\": 57.12345\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/d41eb927-5e44-4496-a34c-1aa14ce4c3d3/question",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"d41eb927-5e44-4496-a34c-1aa14ce4c3d3",
+								"question"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 30 Sep 2025 10:49:13 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "355",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RtlSijDbAi0EMJQ=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Question added to quiz d41eb927-5e44-4496-a34c-1aa14ce4c3d3\",\n    \"question\": {\n        \"question\": \"När invigdes Västerås stadshotell?\",\n        \"answer\": \"1907\",\n        \"location\": {\n            \"longitude\": 14.54321,\n            \"latitude\": 57.12345\n        },\n        \"questionId\": 1759229353455,\n        \"createdAt\": \"2025-09-30T10:49:13.455Z\"\n    }\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n      \"question\": \"Vilket år grundades Stockholm?\",\r\n      \"answer\": \"1252\",\r\n      \"location\": { \"longitude\": 18.0686, \"latitude\": 59.3293 }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/aad9ee29-ef11-4c98-9837-139c4ec51548/question",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"aad9ee29-ef11-4c98-9837-139c4ec51548",
+								"question"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:11:50 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RwhK1gXyAi0EMug=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Unauthorized\",\n    \"message\": \"Unauthorized request- you can only update/delete your own quiz\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET QUIZ BY ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxpbGxhbXJ5IiwidXNlcklkIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwic3ViIjoiNzYwZWVkZTYtZTc3NS00ZGVmLWFjNGYtNDE1NjgxZGU2MTdjIiwiaWF0IjoxNzU5MjMxMzEwLCJleHAiOjE3NTkyNDIxMTB9.yFIibTf74N5VecjQAtss_z4zBRK7Ck9EcIrnGHyNmMM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/d41eb927-5e44-4496-a34c-1aa14ce4c3d3",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz",
+						"d41eb927-5e44-4496-a34c-1aa14ce4c3d3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET QUIZ BY ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:26:27 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1453",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RwjT-hwYAi0EPKQ=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"quiz\": {\n        \"quizId\": \"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5\",\n        \"quizName\": \"Gothenburg Challenge\",\n        \"city\": \"Göteborg\",\n        \"questions\": [\n            {\n                \"questionId\": 1759306734032,\n                \"question\": \"Vilken gata är Göteborgs paradgata?\",\n                \"answer\": \"Avenyn\",\n                \"location\": {\n                    \"longitude\": 11.9746,\n                    \"latitude\": 57.7089\n                }\n            },\n            {\n                \"questionId\": 1759306742341,\n                \"question\": \"Vilket år grundades Göteborg?\",\n                \"answer\": \"1621\",\n                \"location\": {\n                    \"longitude\": 11.97,\n                    \"latitude\": 57.71\n                }\n            },\n            {\n                \"questionId\": 1759306754798,\n                \"question\": \"Vilket år grundades Göteborg?\",\n                \"answer\": \"1621\",\n                \"location\": {\n                    \"longitude\": 11.97,\n                    \"latitude\": 57.71\n                }\n            },\n            {\n                \"questionId\": 1759306766801,\n                \"question\": \"Vad heter Göteborgs största nöjespark?\",\n                \"answer\": \"Liseberg\",\n                \"location\": {\n                    \"longitude\": 11.993,\n                    \"latitude\": 57.696\n                }\n            },\n            {\n                \"questionId\": 1759306776593,\n                \"question\": \"Vad heter den stora hamnen i Göteborg?\",\n                \"answer\": \"Göteborgs hamn\",\n                \"location\": {\n                    \"longitude\": 11.95,\n                    \"latitude\": 57.71\n                }\n            }\n        ],\n        \"createdAt\": \"2025-10-01T08:06:53.676Z\",\n        \"ownerId\": \"6c32d5f1-adda-426e-918a-02f51e576298\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE QUIZ BY ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNtYXJ0Y29va2llIiwidXNlcklkIjoiYTI2NzU4MGMtYTZjNC00MzZmLThiMTUtMjAwMGUzNTM1MTlhIiwic3ViIjoiYTI2NzU4MGMtYTZjNC00MzZmLThiMTUtMjAwMGUzNTM1MTlhIiwiaWF0IjoxNzU5MzA3Mzk1LCJleHAiOjE3NTkzMTgxOTV9.DaSTRqX6LNSSWV4lFSIzhkTL4XG5KXAO3T5FdfxGyuo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/2586d6b1-0630-4596-94f2-c367b3747a4a",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz",
+						"2586d6b1-0630-4596-94f2-c367b3747a4a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE QUIZ BY ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/2586d6b1-0630-4596-94f2-c367b3747a4a",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"2586d6b1-0630-4596-94f2-c367b3747a4a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:33:14 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RwkTlhRjgi0EM1Q=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"msg\": \"Quiz deleted\",\n    \"quizId\": \"2586d6b1-0630-4596-94f2-c367b3747a4a\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST SCORE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1hcGxvdmVyIiwidXNlcklkIjoiNjZmZjg1NWItNmVmNy00MDFjLThmMWUtZmYzZDMyODU5MjM0Iiwic3ViIjoiNjZmZjg1NWItNmVmNy00MDFjLThmMWUtZmYzZDMyODU5MjM0IiwiaWF0IjoxNzU5MzA1ODY0LCJleHAiOjE3NTkzMTY2NjR9.91_GE9ZTfuErAXdTNRdHsBT8Q5cLE_Ac6v68n8sJA4s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5/leaderboard",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz",
+						"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5",
+						"leaderboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST SCORE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"score\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5/leaderboard",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5",
+								"leaderboard"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:27:59 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "196",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "RwjiTho4Ai0EJUg=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Score added to quiz cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5\",\n    \"quizName\": \"Gothenburg Challenge\",\n    \"user\": \"66ff855b-6ef7-401c-8f1e-ff3d32859234\",\n    \"score\": 5\n}"
+				},
+				{
+					"name": "409",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"score\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5/leaderboard",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5",
+								"leaderboard"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:28:34 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "Rwjn-iffgi0EJrw=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"os\",\n    \"message\": \"The new score is not higher than your current score.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET LEADERBOARD",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNtYXJ0Y29va2llIiwidXNlcklkIjoiYTI2NzU4MGMtYTZjNC00MzZmLThiMTUtMjAwMGUzNTM1MTlhIiwic3ViIjoiYTI2NzU4MGMtYTZjNC00MzZmLThiMTUtMjAwMGUzNTM1MTlhIiwiaWF0IjoxNzU5MzA3Mzk1LCJleHAiOjE3NTkzMTgxOTV9.DaSTRqX6LNSSWV4lFSIzhkTL4XG5KXAO3T5FdfxGyuo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5/leaderboard",
+					"protocol": "https",
+					"host": [
+						"jj65juzv4c",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quiz",
+						"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5",
+						"leaderboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET LEADERBOARD",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jj65juzv4c.execute-api.eu-north-1.amazonaws.com/quiz/cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5/leaderboard",
+							"protocol": "https",
+							"host": [
+								"jj65juzv4c",
+								"execute-api",
+								"eu-north-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"quiz",
+								"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5",
+								"leaderboard"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Oct 2025 08:31:06 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "697",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "Rwj_egmggi0EJTw=",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"quiz\": {\n        \"quizId\": \"cf25ab1c-2c12-4ef2-bd6f-ca0de32cefe5\",\n        \"quizName\": \"Gothenburg Challenge\"\n    },\n    \"leaderboard\": [\n        {\n            \"userId\": \"66ff855b-6ef7-401c-8f1e-ff3d32859234\",\n            \"score\": 5,\n            \"createdAt\": \"2025-10-01T08:27:59.288Z\",\n            \"modifiedAt\": \"2025-10-01T08:27:59.288Z\"\n        },\n        {\n            \"userId\": \"6c32d5f1-adda-426e-918a-02f51e576298\",\n            \"score\": 3,\n            \"createdAt\": \"2025-10-01T08:29:39.488Z\",\n            \"modifiedAt\": \"2025-10-01T08:29:39.488Z\"\n        },\n        {\n            \"userId\": \"a267580c-a6c4-436f-8b15-2000e353519a\",\n            \"score\": 2,\n            \"createdAt\": \"2025-10-01T08:30:19.902Z\",\n            \"modifiedAt\": \"2025-10-01T08:30:19.902Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

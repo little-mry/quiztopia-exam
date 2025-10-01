@@ -1,35 +1,34 @@
-Swagger: http://quiztopia-api-documentation.s3-website.eu-north-1.amazonaws.com/#/
+# Quiztopia
+## Maria Kjellholm
+
+![Datamodell](./src/assets/Quiztopia-datamodell.png)
+
+## Kort info:
+- Jag har skrivit i typescript, för att utmana mig själv.
+- Det finns data för att logga in användare eller kolla på specifikt quiz i src/assets/dummyData.json
 
 
 ## Kravspecifikation
+### Godkänt:
 - ✅  Det går att skapa konto och logga in.
 - ✅ Det går att se alla quiz, vad quiz:et heter samt vem som skapat det.
 - ✅ Det går att välja ett specifikt quiz och få alla frågor.
 - ✅ Kräver inloggning
-
-# För nedan funktionalitet är det enbart på sin egen användare man kan arbeta på. Alltså du kan exempelvis inte ta bort någon annans quiz.
-
 - ✅ Det går att skapa ett quiz.
 - ✅ Det går att lägga till frågor på ett skapat quiz.
 - ✅ En fråga innehåller: Frågan, svaret samt koordinater på kartan (longitud och latitud, dessa kan vara påhittade och måste inte vara riktiga koordinater).
-- ✅  Det går att ta bort ett quiz.
+- ✅ Det går att ta bort ett quiz.
+- ✅ config-fil för Postman med exempelanrop
 
-## VG-krav
-- Det finns en "leaderboard" över vilka spelare som fått flest poäng på varje quiz. Här kommer man behöva ha två endpoints, en för att registrera poäng för en användare och en endpoint för att hämta topplista över poäng och användare för ett quiz.
-- ✅ Du ska ha en policy i din serverless framework - yaml där du beskrivit exakt de tjänster och "actions" som ditt projekt behöver för att köra. Detta kan vara global och gälla alla lambda-funktioner. Du ska alltså inte använda dig av en roll här.
+### VG-krav
+- ✅Leaderboard, två endpoint (lägga till poäng, se top scores för en quiz)
+- ✅ Du ska ha en policy i din serverless framework
 
 ## Tekniska krav
-Serverless framework
-Middy
-JSON Web Token
-API Gateway
-AWS Lambda
-DynamoDB
+✅ Serverless framework
+✅ Middy
+✅ JSON Web Token (använder jose-paketet)
+✅ API Gateway
+✅ AWS Lambda
+✅ DynamoDB
 
-
-## För Godkänt:
-✅ Uppfyller alla krav i kravspecifikationen.
-✅ Uppfyller alla tekniska krav.
-config-fil för Postman med exempelanrop
-## För Väl Godkänt:
-Uppfyller alla krav i kravspecifikationen inklusive VG-kraven.
