@@ -8,7 +8,7 @@ import { client } from "../../services/db";
 import { sendResponse } from "../../utils/sendResponse";
 import { errorHandler } from "../../middlewares/errorHandler";
 import { authorize } from "../../middlewares/authMiddleware";
-import { InternalServerError, NotFoundError } from "../../utils/httpErrors";
+import { NotFoundError } from "../../utils/httpErrors";
 import { QueryCommand } from "@aws-sdk/client-dynamodb";
 import { unmarshall } from "@aws-sdk/util-dynamodb";
 

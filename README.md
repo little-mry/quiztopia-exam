@@ -7,6 +7,9 @@
 ### Kort info:
 - Jag har skrivit i typescript, för att utmana mig själv.
 - Det finns data för att logga in användare eller kolla på specifikt quiz i src/assets/dummyData.json
+- Custom middlewares: authorize och errorHandler
+- I /services finns utöver db.ts en quizRepo.ts - som återanvänds i funktioner där man hämtar ett quiz via ID, och även för att kolla att du är ägaren för ett specifikt quiz
+- Eftersom paketet http-errors inte funkar så bra med typescript (inte för mig iaf), har jag skapat en egen httpErrors.ts som använd tillsammans med errorHandlern
 
 ### Detta är uppfyllt i projektet:
 #### Godkänt:
