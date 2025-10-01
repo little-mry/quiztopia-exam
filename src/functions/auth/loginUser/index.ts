@@ -70,7 +70,6 @@ const lamdbaHandler = async (
     if (!ok) throw new UnauthorizedError("Invalid credentials");
 
     // create token w jose
-    // LATER : put in cookie
     const token = await new SignJWT({
       username: usernameNorm,
       userId,

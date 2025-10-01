@@ -107,7 +107,6 @@ const lamdbaHandler = async (
   }
 
   // create token w jose
-  // LATER : put in cookie
   const token = await new SignJWT({
     username: usernameNorm,
     userId,
